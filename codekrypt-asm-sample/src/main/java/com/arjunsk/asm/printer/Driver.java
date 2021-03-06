@@ -21,6 +21,8 @@ public class Driver {
   public static void main(String[] args) throws IOException {
     ClassPrinter classPrinter = new ClassPrinter();
     ClassReader classReader = new ClassReader("com.arjunsk.asm.printer.model.RadioButton");
+
+    // NOTE: ClassWriter extends ClassVisitor.
     classReader.accept(classPrinter, 0);
   }
 }
