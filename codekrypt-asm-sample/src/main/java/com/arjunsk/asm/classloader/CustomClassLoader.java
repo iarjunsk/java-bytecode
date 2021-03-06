@@ -14,7 +14,7 @@ public class CustomClassLoader extends ClassLoader {
   @Override
   protected Class<?> findClass(String name) throws ClassNotFoundException {
 
-    if (name.endsWith("_Stub")) {
+    if (name.endsWith("Comparable")) {
       byte[] byteArray = getCustomClassByteArray();
       return defineClass(name, byteArray, 0, byteArray.length);
     }
@@ -35,7 +35,7 @@ public class CustomClassLoader extends ClassLoader {
         "pkg/Comparable", // Full Class Name with /
         null, // Generics <T>
         "java/lang/Object", // Interface extends Object (Super Class)
-        new String[] {"pkg/Measurable"});
+        new String[] {"com/arjunsk/asm/classloader/support/Measurable"});
     cw.visitField(
             ACC_PUBLIC + ACC_FINAL + ACC_STATIC,
             "LESS",

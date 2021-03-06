@@ -1,5 +1,7 @@
 package com.arjunsk.asm.classloader;
 
+import java.lang.reflect.Field;
+
 /**
  * OUTPUT
  *
@@ -17,8 +19,11 @@ public class ClassWriterDriver {
 
   public static void main(String[] args) throws ClassNotFoundException {
     CustomClassLoader customClassLoader = new CustomClassLoader();
-    Class result = customClassLoader.findClass("Comparable_Stub");
+    Class loadedClass = customClassLoader.findClass("pkg.Comparable");
 
-    System.out.println(result.getName());
+    System.out.println(loadedClass.getName());
+    for (Field field : loadedClass.getFields()) {
+      System.out.println("Field " + field.getName());
+    }
   }
 }
