@@ -1,4 +1,4 @@
-package com.arjunsk.asm.filtering;
+package com.arjunsk.asm.filter;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
