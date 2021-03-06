@@ -1,4 +1,4 @@
-package com.arjunsk.asm.classloader;
+package com.arjunsk.asm.writer;
 
 import java.lang.reflect.Field;
 

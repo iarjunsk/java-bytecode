@@ -1,4 +1,4 @@
-package com.arjunsk.asm.printer;
+package com.arjunsk.asm.reader;
 
 import java.io.IOException;
 import org.objectweb.asm.ClassReader;
