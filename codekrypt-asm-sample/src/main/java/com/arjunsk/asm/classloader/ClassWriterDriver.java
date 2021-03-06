@@ -19,7 +19,7 @@ public class ClassWriterDriver {
 
   public static void main(String[] args) throws ClassNotFoundException {
     CustomClassLoader customClassLoader = new CustomClassLoader();
-    Class loadedClass = customClassLoader.findClass("pkg.Comparable");
+    Class loadedClass = customClassLoader.findClass("pkg.proxy.Comparable");
 
     System.out.println(loadedClass.getName());
     for (Field field : loadedClass.getFields()) {

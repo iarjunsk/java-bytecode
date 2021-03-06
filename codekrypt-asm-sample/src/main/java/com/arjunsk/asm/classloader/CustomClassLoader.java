@@ -14,7 +14,7 @@ public class CustomClassLoader extends ClassLoader {
   @Override
   protected Class<?> findClass(String name) throws ClassNotFoundException {
 
-    if (name.endsWith("Comparable")) {
+    if (name.startsWith("pkg.proxy")) {
       byte[] byteArray = getCustomClassByteArray();
       return defineClass(name, byteArray, 0, byteArray.length);
     }
@@ -32,7 +32,7 @@ public class CustomClassLoader extends ClassLoader {
     cw.visit(
         V1_5, // Java 1.5
         ACC_PUBLIC + ACC_ABSTRACT + ACC_INTERFACE,
-        "pkg/Comparable", // Full Class Name with /
+        "pkg/proxy/Comparable", // Full Class Name with /
         null, // Generics <T>
         "java/lang/Object", // Interface extends Object (Super Class)
         new String[] {"com/arjunsk/asm/classloader/support/Measurable"});
