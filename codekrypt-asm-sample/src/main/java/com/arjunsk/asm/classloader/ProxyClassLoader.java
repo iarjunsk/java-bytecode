@@ -9,7 +9,7 @@ import static org.objectweb.asm.Opcodes.V1_5;
 
 import org.objectweb.asm.ClassWriter;
 
-public class CustomClassLoader extends ClassLoader {
+public class ProxyClassLoader extends ClassLoader {
 
   @Override
   protected Class<?> findClass(String name) throws ClassNotFoundException {
