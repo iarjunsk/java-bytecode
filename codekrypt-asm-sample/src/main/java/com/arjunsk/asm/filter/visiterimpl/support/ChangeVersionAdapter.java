@@ -1,4 +1,4 @@
-package com.arjunsk.asm.filter.sample2.support;
+package com.arjunsk.asm.filter.visiterimpl.support;
 
 import static org.objectweb.asm.Opcodes.ASM4;
 import static org.objectweb.asm.Opcodes.V1_5;
