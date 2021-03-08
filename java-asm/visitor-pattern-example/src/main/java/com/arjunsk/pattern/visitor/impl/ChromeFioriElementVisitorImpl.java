@@ -11,7 +11,17 @@ public class ChromeFioriElementVisitorImpl implements FioriElementVisitor {
   /** {@inheritDoc} */
   @Override
   public void visit(TextFieldFioriElement textField, ElementAction action) {
-    System.out.println(action.getOperation() + " on " + textField.getText() + " Text Field.");
+    switch (action.getOperation()) {
+      case CLICK:
+        System.out.println("Perform Click on TextField " + textField.getText());
+        break;
+      case INPUT:
+        System.out.println("Perform Input on TextField " + textField.getText());
+        break;
+      case DOUBLE_CLICK:
+        System.out.println("Perform DoubleClick on TextField " + textField.getText());
+        break;
+    }
   }
 
   /** {@inheritDoc} */
