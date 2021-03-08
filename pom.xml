@@ -5,13 +5,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.arjunsk</groupId>
-  <artifactId>codekrypt-asm</artifactId>
+  <artifactId>java-bytecode</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
-    <module>codekrypt-visitor-pattern</module>
-    <module>codekrypt-asm-sample</module>
+    <module>java-asm</module>
+    <module>java-cglib</module>
   </modules>
 
   <properties>
