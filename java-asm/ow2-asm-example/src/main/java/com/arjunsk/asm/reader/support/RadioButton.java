@@ -1,4 +1,4 @@
-package com.arjunsk.asm.reader.model;
+package com.arjunsk.asm.reader.support;
 
 public class RadioButton {
 
