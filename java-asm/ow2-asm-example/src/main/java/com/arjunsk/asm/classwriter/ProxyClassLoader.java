@@ -1,4 +1,4 @@
-package com.arjunsk.asm.writer;
+package com.arjunsk.asm.classwriter;
 
 import static org.objectweb.asm.Opcodes.ACC_ABSTRACT;
 import static org.objectweb.asm.Opcodes.ACC_FINAL;
@@ -26,7 +26,7 @@ public class ProxyClassLoader extends ClassLoader {
     ClassWriter cw = new ClassWriter(0);
 
     /**
-     * Start the interface {@link com.arjunsk.asm.reader.ClassPrinter#visit(int, int, String,
+     * Start the interface {@link com.arjunsk.asm.classreader.ClassPrinter#visit(int, int, String,
      * String, String, String[])}
      */
     cw.visit(
@@ -35,7 +35,7 @@ public class ProxyClassLoader extends ClassLoader {
         "pkg/proxy/Comparable", // Full Class Name with /
         null, // Generics <T>
         "java/lang/Object", // Interface extends Object (Super Class)
-        new String[] {"com/arjunsk/asm/writer/support/Measurable"});
+        new String[] {"com/arjunsk/asm/classwriter/support/Measurable"});
     cw.visitField(
             ACC_PUBLIC + ACC_FINAL + ACC_STATIC,
             "LESS",

@@ -1,4 +1,4 @@
-package com.arjunsk.asm.reader;
+package com.arjunsk.asm.classreader;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.ASM4;
 
