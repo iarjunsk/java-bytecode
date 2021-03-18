@@ -1,6 +1,7 @@
 package com.arjunsk.pattern.domain;
 
-import com.arjunsk.pattern.enums.ElementOperation;
+import com.arjunsk.pattern.core.element.imp.TextFieldFioriElement;
+import com.arjunsk.pattern.domain.support.ElementOperation;
 
 public class ElementAction {
 
@@ -16,7 +17,7 @@ public class ElementAction {
   /**
    * Constructor for argument Action.
    *
-   * <p>Eg:- {@link com.arjunsk.pattern.element.imp.TextFieldFioriElement}
+   * <p>Eg:- {@link TextFieldFioriElement}
    */
   public ElementAction(ElementOperation operation, String text) {
     this.operation = operation;

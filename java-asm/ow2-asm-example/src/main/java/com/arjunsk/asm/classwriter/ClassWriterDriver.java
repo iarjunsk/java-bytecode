@@ -21,6 +21,7 @@ public class ClassWriterDriver {
     ProxyClassLoader proxyClassLoader = new ProxyClassLoader();
     Class loadedClass = proxyClassLoader.findClass("pkg.proxy.Comparable");
 
+    // Testing out the output of Proxy Class Loader.
     System.out.println(loadedClass.getName());
     for (Field field : loadedClass.getFields()) {
       System.out.println("Field " + field.getName());

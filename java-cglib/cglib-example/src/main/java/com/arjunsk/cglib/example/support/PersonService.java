@@ -2,7 +2,7 @@ package com.arjunsk.cglib.example.support;
 
 public class PersonService {
   public String sayHello(String name) {
-    return "Hello " + name;
+    return "Hey " + name;
   }
 
   public Integer lengthOfName(String name) {

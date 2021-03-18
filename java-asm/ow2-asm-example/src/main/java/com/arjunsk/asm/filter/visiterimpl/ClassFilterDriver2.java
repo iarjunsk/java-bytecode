@@ -4,19 +4,23 @@ import com.arjunsk.asm.filter.visiterimpl.support.ChangeVersionAdapter;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 
+// Flow: CR --> CVA --> CW --> toByteArray()
 public class ClassFilterDriver2 {
 
   public static void main(String[] args) {
-
-    byte[] b1 = new byte[1];
-    ClassReader classReader = new ClassReader(b1);
-
-    // classVisitor forwards all events to classWriter
+    // 1. CW
     ClassWriter classWriter = new ClassWriter(0);
+
+    // 2. CVA
+    /* classVisitor forwards all events to classWriter.*/
     ChangeVersionAdapter changeVersionAdapter = new ChangeVersionAdapter(classWriter);
 
+    // 3. CR
+    byte[] inputClass = new byte[1];
+    ClassReader classReader = new ClassReader(inputClass);
     classReader.accept(changeVersionAdapter, 0);
 
-    byte[] b2 = classWriter.toByteArray(); // b2 represents the same class as b1
+    // b2 represents the same class as b1
+    byte[] outputClass = classWriter.toByteArray();
   }
 }

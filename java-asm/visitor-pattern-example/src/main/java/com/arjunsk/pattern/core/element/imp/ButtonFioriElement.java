@@ -1,8 +1,8 @@
-package com.arjunsk.pattern.element.imp;
+package com.arjunsk.pattern.core.element.imp;
 
+import com.arjunsk.pattern.core.element.FioriElement;
+import com.arjunsk.pattern.core.visitor.FioriElementVisitor;
 import com.arjunsk.pattern.domain.ElementAction;
-import com.arjunsk.pattern.element.FioriElement;
-import com.arjunsk.pattern.visitor.FioriElementVisitor;
 
 public class ButtonFioriElement implements FioriElement {
 
@@ -25,5 +25,10 @@ public class ButtonFioriElement implements FioriElement {
   @Override
   public void accept(FioriElementVisitor visitor, ElementAction action) {
     visitor.visit(this, action);
+  }
+
+  @Override
+  public String getId() {
+    return "Button";
   }
 }

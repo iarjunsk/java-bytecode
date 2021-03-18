@@ -28,6 +28,13 @@ public class ProxyClassLoader extends ClassLoader {
     /**
      * Start the interface {@link com.arjunsk.asm.classreader.ClassPrinter#visit(int, int, String,
      * String, String, String[])}
+     *
+     * <p>OUTPUT:
+     *
+     * <pre>
+     *    package pkg;
+     *    public interface Comparable extends Measurable {
+     * </pre>
      */
     cw.visit(
         V1_5, // Java 1.5
@@ -35,7 +42,9 @@ public class ProxyClassLoader extends ClassLoader {
         "pkg/proxy/Comparable", // Full Class Name with /
         null, // Generics <T>
         "java/lang/Object", // Interface extends Object (Super Class)
-        new String[] {"com/arjunsk/asm/classwriter/support/Measurable"});
+        new String[] {"com/arjunsk/asm/classwriter/support/Measurable"}); // interface name
+
+    /** OUTPUT: int LESS = -1; */
     cw.visitField(
             ACC_PUBLIC + ACC_FINAL + ACC_STATIC,
             "LESS",
@@ -46,11 +55,15 @@ public class ProxyClassLoader extends ClassLoader {
         // Visitor, without call to visitAnnotation() or visitAttribute()
         .visitEnd();
 
+    /** OUTPUT: int EQUAL = 0; */
     cw.visitField(ACC_PUBLIC + ACC_FINAL + ACC_STATIC, "EQUAL", "I", null, new Integer(0))
         .visitEnd();
+
+    /** OUTPUT: int GREATER = 1; */
     cw.visitField(ACC_PUBLIC + ACC_FINAL + ACC_STATIC, "GREATER", "I", null, new Integer(1))
         .visitEnd();
 
+    /** OUTPUT: int compareTo(Object o); */
     cw.visitMethod(ACC_PUBLIC + ACC_ABSTRACT, "compareTo", "(Ljava/lang/Object;)I", null, null)
         .visitEnd();
 

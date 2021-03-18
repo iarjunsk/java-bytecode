@@ -1,9 +1,9 @@
-package com.arjunsk.pattern.visitor.impl;
+package com.arjunsk.pattern.core.visitor.impl;
 
+import com.arjunsk.pattern.core.element.imp.ButtonFioriElement;
+import com.arjunsk.pattern.core.element.imp.TextFieldFioriElement;
+import com.arjunsk.pattern.core.visitor.FioriElementVisitor;
 import com.arjunsk.pattern.domain.ElementAction;
-import com.arjunsk.pattern.element.imp.ButtonFioriElement;
-import com.arjunsk.pattern.element.imp.TextFieldFioriElement;
-import com.arjunsk.pattern.visitor.FioriElementVisitor;
 
 /** Separate's Component Logic from Domain Class. */
 public class ChromeFioriElementVisitorImpl implements FioriElementVisitor {

@@ -1,8 +1,8 @@
-package com.arjunsk.pattern.visitor;
+package com.arjunsk.pattern.core.visitor;
 
+import com.arjunsk.pattern.core.element.imp.ButtonFioriElement;
+import com.arjunsk.pattern.core.element.imp.TextFieldFioriElement;
 import com.arjunsk.pattern.domain.ElementAction;
-import com.arjunsk.pattern.element.imp.ButtonFioriElement;
-import com.arjunsk.pattern.element.imp.TextFieldFioriElement;
 
 public interface FioriElementVisitor {
 

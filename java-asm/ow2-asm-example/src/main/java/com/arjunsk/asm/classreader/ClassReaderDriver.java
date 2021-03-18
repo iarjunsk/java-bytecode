@@ -17,12 +17,14 @@ import org.objectweb.asm.ClassReader;
  * visitEnd() :
  * </pre>
  */
-public class Driver {
+public class ClassReaderDriver {
   public static void main(String[] args) throws IOException {
-    ClassPrinter classPrinter = new ClassPrinter();
     ClassReader classReader = new ClassReader("com.arjunsk.asm.classreader.support.RadioButton");
 
-    // NOTE: ClassWriter extends ClassVisitor.
+    ClassPrinter classPrinter = new ClassPrinter();
     classReader.accept(classPrinter, 0);
+
+    // NOTE: ClassWriter extends ClassVisitor. Simply but, ClassReader is a `visitable` and
+    // ClassWriter, CustomClassPrinter all should be `visitor` to implement custom business logic.
   }
 }

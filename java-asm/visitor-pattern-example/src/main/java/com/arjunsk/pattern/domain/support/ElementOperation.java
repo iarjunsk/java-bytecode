@@ -1,4 +1,4 @@
-package com.arjunsk.pattern.enums;
+package com.arjunsk.pattern.domain.support;
 
 public enum ElementOperation {
   CLICK,
