@@ -11,7 +11,7 @@ import org.objectweb.asm.ClassWriter;
  *
  * <p>Eg:- Lombok
  *
- * <p>Refer 1: `ASM Guide` Page 21.
+ * <p>Refer 1: `ASM Guide` Page 21. (PS: I have modified ClassWriter to accept flag only argument)
  *
  * <p>Refer 2:
  * https://stackoverflow.com/questions/27851588/what-is-premain-and-how-does-it-get-called
