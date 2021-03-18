@@ -15,13 +15,13 @@ public class ProxyClassLoader extends ClassLoader {
   protected Class<?> findClass(String name) throws ClassNotFoundException {
 
     if (name.startsWith("pkg.proxy")) {
-      byte[] byteArray = getCustomClassByteArray();
+      byte[] byteArray = generateCustomClass();
       return defineClass(name, byteArray, 0, byteArray.length);
     }
     return super.findClass(name);
   }
 
-  private byte[] getCustomClassByteArray() {
+  private byte[] generateCustomClass() {
 
     ClassWriter cw = new ClassWriter(0);
 
