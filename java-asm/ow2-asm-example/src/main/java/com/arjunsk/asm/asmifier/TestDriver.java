@@ -12,7 +12,7 @@ public class TestDriver {
   /** Prints the ASM code to generate the class. */
   public static void main(String[] args) throws IOException {
 
-    InputStream resourceAsStream = TestDriver.class.getResourceAsStream("Example.class");
+    InputStream resourceAsStream = TestDriver.class.getResourceAsStream("support/Example.class");
     ClassReader cr = new ClassReader(resourceAsStream);
 
     TraceClassVisitor cv = new TraceClassVisitor(null, new ASMifier(), new PrintWriter(System.out));
